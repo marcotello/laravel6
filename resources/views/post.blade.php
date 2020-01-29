@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello {{ $name }}</h1>
-    <p>Render this value without escaping {!! $no_escape !!}</p>
+    <h1>Hello World</h1>
+    <p>{{ $post }}</p>
 </body>
 </html>
