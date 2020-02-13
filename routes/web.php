@@ -20,7 +20,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 Route::get('/about', function () {
-    return view('about');
+
+    return view('about', [
+        'articles' => App\Article::take(3)->latest()->get()
+    ]);
 });
 Route::get('test', function () {
     $name = request('name');
@@ -51,4 +54,6 @@ Route::get('test', function () {
 
 // The same Route but calling a Controller. More suiteble for larger projects.
 Route::get('/post/{post}', 'PostsController@show');
+
+Route::get('/articles/{article}', 'ArticlesController@show');
 
